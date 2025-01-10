@@ -11,7 +11,8 @@
             color: #fff;
             text-align: center;
             padding: 50px;
-            overflow: hidden;
+            overflow-x: hidden; /* Garante que não haja rolagem horizontal */
+            margin: 0;
         }
         h1 {
             font-size: 3em;
@@ -45,6 +46,8 @@
         /* Estilo do botão */
         .fugindo-btn {
             position: absolute;
+            left: 50%;
+            top: 50%;
             padding: 15px 30px;
             font-size: 1.5em;
             background-color: #fffcf9;
@@ -53,7 +56,26 @@
             border-radius: 15px;
             cursor: pointer;
             transition: 0.3s ease;
+            transform: translate(-50%, -50%); /* Garante que o botão começa centralizado */
         }
+
+        /* Responsividade: Ajusta o layout para dispositivos menores */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2.5em; /* Ajusta o tamanho da fonte */
+            }
+            p {
+                font-size: 1.2em; /* Ajusta o tamanho do texto */
+            }
+            .sweet {
+                font-size: 1em; /* Ajusta o tamanho do texto */
+            }
+            .fugindo-btn {
+                font-size: 1.2em; /* Ajusta o tamanho do botão */
+                padding: 10px 20px;
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -61,13 +83,13 @@
     <h1>Meu amor ❤️</h1>
 
     <p>Oi, <span class="highlight">Alice</span>! 💖</p>
-    <p>Você é a pessoa mais doce do mundo e incrivel do mundo, e eu não falo isso pelo seu grande vicio em doce mas também pela doçura e bondade que você tem no coração.</p>
-    <p>Você é a pessoa mais incrivel que eu poderia conhecer </p>
+    <p>Você é a pessoa mais doce do mundo e incrível do mundo, e eu não falo isso pelo seu grande vício em doces, mas também pela doçura e bondade que você tem no coração.</p>
+    <p>Você é a pessoa mais incrível que eu poderia conhecer.</p>
 
-    <p>Nosso namoro é como o melhor doce que existe 'que todo mundo sabe que é mm de amendoim', cheio de momentos incríveis e muito amor! Te amo muito, minha <span class="highlight">Feiosa</span>!</p>
+    <p>Nosso namoro é como o melhor doce que existe, 'que todo mundo sabe que é MM de amendoim', cheio de momentos incríveis e muito amor! Te amo muito, minha <span class="highlight">Feiosa</span>!</p>
 
     <div class="sweet">
-        <p>Se pudesse, te daria todos os doces do mundo, mas acho que o que posso oferecer de melhor é o meu coração e minha felicidade de viverlado! </p>
+        <p>Se pudesse, te daria todos os doces do mundo, mas acho que o que posso oferecer de melhor é o meu coração e minha felicidade de viver ao seu lado!</p>
     </div>
 
     <p class="footer">Com amor, Matheus <span class="emoji">💖</span></p>
