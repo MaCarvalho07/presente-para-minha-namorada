@@ -1,104 +1,101 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Meu amor 💖</title>
+    <title>Meu Amor</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #ff9a8b, #ff6a88);
-            color: #fff;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffb3ff, #ff80bf);
+            color: #4b0082;
+            margin: 0;
+            padding: 0;
             text-align: center;
-            padding: 50px;
-            overflow: hidden;
+            position: relative; /* Permite que o botão se mova dentro da tela */
+            height: 100vh;
         }
         h1 {
             font-size: 3em;
-            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        h2 {
+            font-size: 2em;
+            margin: 20px 0;
         }
         p {
-            font-size: 1.5em;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        .highlight {
-            color: #fffcf9;
-            font-weight: bold;
-        }
-        .sweet {
             font-size: 1.2em;
-            background-color: #ff6a88;
-            padding: 10px;
-            border-radius: 20px;
-            margin-top: 30px;
+            line-height: 1.5;
+            margin: 20px;
         }
-        .footer {
-            font-size: 1em;
-            margin-top: 50px;
-            color: #fffcf9;
-        }
-        .emoji {
-            font-size: 2em;
-        }
-        
-        /* Estilo do botão */
-        .fugindo-btn {
-            position: absolute;
-            padding: 15px 30px;
-            font-size: 1.5em;
-            background-color: #fffcf9;
-            color: #ff6a88;
+        .button {
+            padding: 10px 20px;
+            background-color: #ff80bf;
+            color: white;
             border: none;
-            border-radius: 15px;
+            border-radius: 5px;
             cursor: pointer;
-            transition: 0.3s ease;
+            font-size: 1.2em;
+            position: absolute; /* Faz o botão se mover livremente na tela */
+        }
+        .button:hover {
+            background-color: #ff66b3;
+        }
+        audio {
+            margin-top: 20px;
+            width: 80%;
         }
     </style>
 </head>
 <body>
+    <h1>Para minha Feiosa, Alice</h1>
+    <h2>A menina mais incrível, linda e inteligente do mundo!</h2>
+    <p>Eu sou tão grato por te ter na minha vida. Desde o primeiro momento que a gente se conheceu até hoje, cada momento com você é único. Você me faz sentir coisas incríveis, me faz rir, me faz querer ser a melhor versão de mim.</p>
+    <p>Nosso relacionamento é uma mistura perfeita de carinho, compreensão e amor. A forma como a gente se entende, os nossos gostos compartilhados, como <strong>Charlie Brown Jr.</strong> e <strong>Harry Potter</strong>, e até os nossos momentos de descanso juntos, são o que tornam tudo tão especial. Cada dia ao seu lado é uma nova aventura, e eu não vejo a hora de viver muitos outros momentos com você.</p>
+    <p>Te amo mais do que palavras podem expressar e sou eternamente grato por tudo que a gente já viveu juntos até agora. Que a nossa história continue sendo escrita da forma mais bonita e única possível.</p>
 
-    <h1>Meu amor ❤️</h1>
+    <!-- Música -->
+    <audio controls autoplay>
+        <source src="musicas/Charlie Brown Jr. - Me Encontra(Video Clipe).mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
 
-    <p>Oi, <span class="highlight">Alice</span>! 💖</p>
-    <p>Você é a pessoa mais doce do mundo e incrivel do mundo, e não falo apenas pelos <span class="highlight">doces</span> que você é tão viciada, mas também pela bondade  e doçura que você tem no coração.</p>
-    <p>Eu nunca vi uma pessoa que gosta tanto de dormir igual a você... Mas isso é uma das coisas que mais gosto de fazer com você. </p>
-
-    <p>Nosso namoro é como o melhor doce que existe, cheio de momentos incríveis e muito amor! Te amo muito, minha <span class="highlight">Feiosa</span>!</p>
-
-    <div class="sweet">
-        <p>Se pudesse, te daria todos os doces do mundo, mas acho que o que posso oferecer de melhor é o meu coração e minha felicidade que tenho vivendo ao seu lado</p>
-    </div>
-
-    <p class="footer">Com amor, Matheus <span class="emoji">💖</span></p>
-
-    <!-- Botão que vai fugir do mouse ou mudar ao clicar -->
-    <button class="fugindo-btn" id="fugindoBtn">Me Xingar</button>
+    <button class="button" id="fugir">Me xingar</button>
 
     <script>
-        const button = document.getElementById("fugindoBtn");
+        // Função que faz o botão fugir do mouse
+        const button = document.getElementById("fugir");
 
-        // Verificar se o dispositivo é móvel ou não
-        const isMobile = window.innerWidth <= 800;
+        // Função para o botão fugir
+        function moveButton(e) {
+            const x = e.clientX;
+            const y = e.clientY;
+            const buttonWidth = button.offsetWidth;
+            const buttonHeight = button.offsetHeight;
 
-        if (!isMobile) {
-            // No computador: o botão "foge" do mouse
-            button.addEventListener("mouseover", function() {
-                const x = Math.random() * (window.innerWidth - button.offsetWidth);
-                const y = Math.random() * (window.innerHeight - button.offsetHeight);
-                button.style.left = x + "px";
-                button.style.top = y + "px";
-            });
-        } else {
-            // No dispositivo móvel: o botão muda de lugar quando clicado
-            button.addEventListener("click", function() {
-                const x = Math.random() * (window.innerWidth - button.offsetWidth);
-                const y = Math.random() * (window.innerHeight - button.offsetHeight);
-                button.style.left = x + "px";
-                button.style.top = y + "px";
-            });
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            const maxX = windowWidth - buttonWidth;
+            const maxY = windowHeight - buttonHeight;
+
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
         }
-    </script>
 
+        // Para o botão se mover quando o mouse se move
+        window.addEventListener('mousemove', moveButton);
+
+        // Função que faz o botão se mover ao ser tocado no celular
+        button.addEventListener('click', () => {
+            const randomX = Math.random() * (window.innerWidth - button.offsetWidth);
+            const randomY = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
+        });
+    </script>
 </body>
 </html>
